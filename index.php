@@ -106,7 +106,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     <div id="confidencial" class="hide"></div>
 
     <div class="about">
-        <h1>El mapa de<br> la actualidad</h1>
+        <h1>Mapa de<br> actualidad</h1>
         <p>titulares.news recopila los titulares de varios medios nacionales en tiempo real. </p><p>De un vistazo, podemos comparar y analizar dónde pone el foco cada medio y desde qué angulo.</p> <p>Los medios se han seleccionado tomando como referencia los datos de audiencias proporcionados por Comscore y OJD Interactiva.</p>
     </div>
     <div class="desktop-wrapper">
