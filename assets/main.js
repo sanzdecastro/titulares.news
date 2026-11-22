@@ -232,30 +232,30 @@ function marquee() {
 
 function menuAnimation() {
 	var tlmenu = gsap.timeline();
-	tlmenu.to("header", { yPercent: -100, ease: Power3.easeIn });
+	tlmenu.to("header", { yPercent: -100, ease: "power3.in" });
 }
 
 function menuAnimationBack() {
 	var tlmenu = gsap.timeline();
-	tlmenu.to("header", { yPercent: 0, ease: Power3.easeIn });
+	tlmenu.to("header", { yPercent: 0, ease: "power3.in" });
 }
 
 function newsAnimation() {
   var tlnew = gsap.timeline();
 
-  tlnew.set(".new-wrapper", { autoAlpha: 0, ease: Power3.easeIn });
-  tlnew.set(".new-wrapper h2", { autoAlpha: 0, ease: Power3.easeIn });
-  tlnew.set(".new-wrapper .sup span", { autoAlpha: 1, yPercent: -100, ease: Power3.easeIn });
-  tlnew.set(".new-wrapper .sup .red", { autoAlpha: 1, xPercent: -100, ease: Power3.easeIn });
+  tlnew.set(".new-wrapper", { autoAlpha: 0, ease: "power3.in" });
+  tlnew.set(".new-wrapper h2", { autoAlpha: 0, ease: "power3.in" });
+  tlnew.set(".new-wrapper .sup span", { autoAlpha: 1, yPercent: -100, ease: "power3.in" });
+  tlnew.set(".new-wrapper .sup .red", { autoAlpha: 1, xPercent: -100, ease: "power3.in" });
 
   tlnew.to(".new-wrapper", {
-    autoAlpha: 1, duration: .6, stagger: .05, ease: Power3.easeIn,
+    autoAlpha: 1, duration: .6, stagger: .05, ease: "power3.in",
   }).to(".new-wrapper h2", {
-    autoAlpha: 1, stagger: .05, duration: 1, ease: Power3.easeIn,
+    autoAlpha: 1, stagger: .05, duration: 1, ease: "power3.in",
   }).to(".new-wrapper .sup span", {
-    autoAlpha: 1, duration: .3, yPercent: 0, ease: Power3.easeIn,
+    autoAlpha: 1, duration: .3, yPercent: 0, ease: "power3.in",
   }).to(".new-wrapper .sup .red", {
-    autoAlpha: 1, duration: .3, xPercent: 0, ease: Power3.easeIn,
+    autoAlpha: 1, duration: .3, xPercent: 0, ease: "power3.in",
   });
 }
 
@@ -274,7 +274,7 @@ function addMovementAbout() {
     position: "fixed",
     bottom: "0vh",
     height: "30vh",
-    ease: Power3.easeIn,
+    ease: "power3.in",
     duration: .5,
     borderRadius: "22px",
   })
@@ -291,7 +291,7 @@ function removeMovementAbout() {
     height: "100vh",
     width: "100vw",
     bottom: "0px",
-    ease: Power3.easeIn,
+    ease: "power3.in",
     duration: .5,
   })
 }
