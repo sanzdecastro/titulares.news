@@ -15,15 +15,30 @@ var MEDIA_MAP = {
   'Infolibre':       '.infolibre',
 };
 
+// El scraper marca sus fallos entre corchetes: "[No encontrado]", "[Error: …]", "[RSS error: …]"
+function isValidHeadline(text) {
+  text = (text || '').trim();
+  return text !== '' && !/^\[[\s\S]*\]$/.test(text);
+}
+
 function getelement() {
   fetch(TITULARES_JSON)
     .then(function(res) { return res.json(); })
     .then(function(data) {
+      var shown = {};
       data.forEach(function(item) {
         var selector = MEDIA_MAP[item.media];
-        if (selector) {
-          $(selector + ' h2').html(item.headline);
+        if (selector && isValidHeadline(item.headline)) {
+          // .text(): el titular viene de webs ajenas, no se interpreta como HTML
+          $(selector + ' h2').text(item.headline.trim());
+          shown[selector] = true;
         }
+      });
+      // Tarjetas sin titular válido (error del scraper o medio ausente): fuera
+      $('.new-container').each(function() {
+        var card = $(this);
+        var filled = Object.keys(shown).some(function(sel) { return card.find(sel).length; });
+        if (!filled) card.hide();
       });
     })
     .catch(function(err) { console.error('Error cargando titulares:', err); });
